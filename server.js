@@ -41,6 +41,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+setInterval(() => {
+    db.query("SELECT 1", (err) => {
+      if (err) console.error("Keep-alive query failed:", err);
+    });
+  }, 30000); // Runs every 30 seconds
+
 app.get("/", (req, res) => {
     res.send("Server is up and running!");
 });
