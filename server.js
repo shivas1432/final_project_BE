@@ -23,10 +23,12 @@ const app = express();
 app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 app.use(cors({
-    origin: "http://localhost:3000",
-    credentials: true
+  origin: ['http://localhost:3000', 'https://shivashankerkanugulaa.netlify.app'],  // Allow both origins
+  credentials: true  // Allow credentials like cookies
 }));
+
 app.use(cookieParser());
+
 
 app.use(session({
     secret: process.env.SESSION_SECRET || 'default_secret_key',
