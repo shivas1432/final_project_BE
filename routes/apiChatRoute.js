@@ -5,7 +5,7 @@ import cors from 'cors';
 
 const router = express.Router();
 
-router.use(cors({ origin: 'http://localhost:3000' }));
+router.use(cors({ origin: 'https://shivashankerkanugulaa.netlify.app' }));
 
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
